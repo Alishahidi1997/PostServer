@@ -6,7 +6,7 @@ import base64
 import openai
 from openai import OpenAI
 from moviepy import VideoFileClip
-
+import os
 # Initialize the OpenAI client
 client = OpenAI()
 
@@ -177,4 +177,7 @@ def process_image():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the PORT from the environment variable, or default to 5000 for local testing
+    port = int(os.environ.get("PORT", 5000))
+    # Bind to all network interfaces using host='0.0.0.0'
+    app.run(host='0.0.0.0', port=port)
