@@ -8,7 +8,7 @@ from openai import OpenAI
 from moviepy import VideoFileClip
 import os
 # Initialize the OpenAI client
-client = OpenAI()
+client = OpenAI(); 
 
 # Initialize Flask app
 app = Flask(__name__)
